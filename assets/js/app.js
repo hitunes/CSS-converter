@@ -38,7 +38,7 @@ var app = {
           var _unit = e.target.value;
           // display the output
           _pxOutput.innerHTML = _unit * 96 / 72  + "px";
-          _inchOutput.innerHTML = _unit / 0.0022046 + "In";
+          _inchOutput.innerHTML = _unit / 72 + "In";
           // percentage output
           _percentageOutput.innerHTML = _unit / 12 * 100 + "%";
           // ounce output
@@ -53,17 +53,17 @@ var app = {
           _pxResult.style.display = "block";
           _inchResult.style.display = "none";
           _ptResult.style.display = "block";
-          _percentageResult.style.display = "block";
+          _percentageResult.style.display = "none";
           _emResult.style.display = "block";
 
           // percentage output
-          _pxOutput.innerHTML = _unit / 16 + "em";
+          _pxOutput.innerHTML = _unit * 96 + "px";
           _percentageOutput.innerHTML = _unit / 1000 + "%";
 
           // pt output
-          _emOutput.innerHTML = _unit * 0.03527 + "em";
+          _emOutput.innerHTML = _unit * 6.022500060225 + "em";
 
-          _ptOutput.innerHTML = _unit * 0.0022046 + "pt";
+          _ptOutput.innerHTML = _unit * 72 + "pt";
         });
       } else if (_selectItem.value === "px") {
         _result.style.display = "block";
@@ -77,7 +77,7 @@ var app = {
           _percentageResult.style.display = "block";
           _emResult.style.display = "block";
 
-          _inchOutput.innerHTML = _unit * 92 + "In";
+          _inchOutput.innerHTML = _unit / 96 + "In";
           // percentage output
           _percentageOutput.innerHTML = _unit / 16 * 100 + "%";
 
@@ -92,7 +92,7 @@ var app = {
           _output.style.display = "block";
           var _unit = e.target.value;
 
-          _inchResult.style.display = "block";
+          _inchResult.style.display = "none";
           _ptResult.style.display = "block";
           _emResult.style.display = "block";
           _percentageResult.style.display = "none";
@@ -119,7 +119,7 @@ var app = {
           _pxOutput.innerHTML = _unit * 16 + "px";
           _percentageOutput.innerHTML = _unit * 100 + "%";
           // pt output
-          _inchOutput.innerHTML = _unit / 0.03527 + "In";
+          _inchOutput.innerHTML = _unit / 6.022500060225 + "In";
           _ptOutput.innerHTML = _unit * 12 + "pt";
         });
       }
