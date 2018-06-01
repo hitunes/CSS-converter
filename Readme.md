@@ -1,2 +1,11 @@
-## this is a simple css converter inspired by a friend having issues converting
-###
+#############################################################
+
+## Converting CSS units can sometimes be a pain in the ass
+
+## This is simple CSS converter solves that problem
+### Choose a unit to convert and see conversion in real time
+
+### Developed using bootstrap and Vanilla JS
+### feel free to add to it
+
+####################################################################
