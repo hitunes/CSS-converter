@@ -14,16 +14,23 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 offset-md-3">
-                <h1 class="display-4 text-center mb-2">CSS UNIT Converter App</h1>
+                <h1 class="display-5 text-center mb-2">CSS UNIT Converter App</h1>
+                <form class="form-inline">
+                    <div class="base form-group">
+                        <label for="email">Base size (px)</label><br>
+                        <input type="number" class="form-control" value="16" readonly="">
+                    </div>
+                </form>
+                <br>
                 <form>
                     <select name="" id="selectItem" class="form-control mb-2">
-        <option value="0">Select unit</option>
-        <option value="px">Px</option>
-        <option value="inch">Inch</option>
-        <option value="em">Em</option>
-        <option value="percentage">Percentage</option>
-        <option value="point">Pt</option>
-      </select>
+						<option value="0">Select unit</option>
+						<option value="px">Px</option>
+						<option value="inch">Inch</option>
+						<option value="em">Em</option>
+						<option value="percentage">Percentage</option>
+						<option value="point">Pt</option>
+					</select>
                     <div id="result">
                         <div class="form-group">
                             <input id="input" type="number" class="form-control form-control-lg" placeholder="Enter Unit">
@@ -33,7 +40,7 @@
                 </form>
                 <div id="output">
                     <div id="pxResult">
-                        <div class="card bg-success mb-2 text-center">
+                        <div class="card bg-warning mb-2 text-center">
                             <div class="card-block">
                                 <h4>Pixel:</h4>
                                 <div id="pxOutput"></div>

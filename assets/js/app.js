@@ -25,36 +25,39 @@ var app = {
       // if the selected unit is pt
       if (_selectItem.value === "point") {
         _result.style.display = "block";
-        _input.addEventListener("input", (e) => {
+        _input.addEventListener("input", e => {
           // set output to visible
           _output.style.display = "block";
           // set the other results div to display block and the pt result to display none
           _inchResult.style.display = "block";
           _percentageResult.style.display = "block";
           _emResult.style.display = "block";
+          _pxResult.style.display = "block";
           _ptResult.style.display = "none";
           // get the input value and save in a var
           var _unit = e.target.value;
-
           // display the output
+          _pxOutput.innerHTML = _unit * 96 / 72  + "px";
           _inchOutput.innerHTML = _unit / 0.0022046 + "In";
           // percentage output
-          _percentageOutput.innerHTML = _unit / 2.2046 + "%";
+          _percentageOutput.innerHTML = _unit / 12 * 100 + "%";
           // ounce output
-          _emOutput.innerHTML = _unit * 16 + "em";
+          _emOutput.innerHTML = _unit / 12 + "em";
         });
       } else if (_selectItem.value === "inch") {
         _result.style.display = "block";
-        _input.addEventListener("input", (e) => {
+        _input.addEventListener("input", e => {
           _output.style.display = "block";
           var _unit = e.target.value;
 
+          _pxResult.style.display = "block";
           _inchResult.style.display = "none";
           _ptResult.style.display = "block";
           _percentageResult.style.display = "block";
           _emResult.style.display = "block";
 
           // percentage output
+          _pxOutput.innerHTML = _unit / 16 + "em";
           _percentageOutput.innerHTML = _unit / 1000 + "%";
 
           // pt output
@@ -62,36 +65,62 @@ var app = {
 
           _ptOutput.innerHTML = _unit * 0.0022046 + "pt";
         });
-      } else if (_selectItem.value === "percentage") {
+      } else if (_selectItem.value === "px") {
         _result.style.display = "block";
-        _input.addEventListener("input", (e) => {
+        _input.addEventListener("input", e => {
           _output.style.display = "block";
           var _unit = e.target.value;
+
+          _pxResult.style.display = "none";
+          _inchResult.style.display = "block";
+          _ptResult.style.display = "block";
+          _percentageResult.style.display = "block";
+          _emResult.style.display = "block";
+
+          _inchOutput.innerHTML = _unit * 92 + "In";
+          // percentage output
+          _percentageOutput.innerHTML = _unit / 16 * 100 + "%";
+
+          // pt output
+          _emOutput.innerHTML = _unit / 16 + "em";
+
+          _ptOutput.innerHTML = _unit * 72 / 96 + "pt";
+        });
+      } else if (_selectItem.value === "percentage") {
+        _result.style.display = "block";
+        _input.addEventListener("input", e => {
+          _output.style.display = "block";
+          var _unit = e.target.value;
+
           _inchResult.style.display = "block";
           _ptResult.style.display = "block";
           _emResult.style.display = "block";
           _percentageResult.style.display = "none";
 
           //output
+          _pxOutput.innerHTML = _unit / 100 * 16 + "px";
           _inchOutput.innerHTML = _unit / 1000 + "In";
           // pt output
-          _emOutput.innerHTML = _unit * 35.27 + "em";
-          _ptOutput.innerHTML = _unit * 2.2046 + "pt";
+          _emOutput.innerHTML = _unit / 100 + "em";
+          _ptOutput.innerHTML = _unit / 100 * 12 + "pt";
         });
       } else if (_selectItem.value === "em") {
         _result.style.display = "block";
-        _input.addEventListener("input", (e) => {
+        _input.addEventListener("input", e => {
           _output.style.display = "block";
           var _unit = e.target.value;
+
+          _pxResult.style.display = "block";
           _inchResult.style.display = "block";
           _ptResult.style.display = "block";
           _percentageResult.style.display = "block";
           _emResult.style.display = "none";
 
-          _percentageOutput.innerHTML = _unit / 35.27 + "%";
+          _pxOutput.innerHTML = _unit * 16 + "px";
+          _percentageOutput.innerHTML = _unit * 100 + "%";
           // pt output
           _inchOutput.innerHTML = _unit / 0.03527 + "In";
-          _ptOutput.innerHTML = _unit / 16 + "pt";
+          _ptOutput.innerHTML = _unit * 12 + "pt";
         });
       }
     });

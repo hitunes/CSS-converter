@@ -1,5 +1,14 @@
-body{
+body {
     margin-top: 70px;
     background-color: #333;
-    color: ;
+}
+
+h1 {
+    color: white;
+    font-weight: bold;
+}
+
+.base {
+    color: white;
+    margin: 0 auto;
 }
