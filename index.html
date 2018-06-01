@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS converter</title>
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h1 class="display-4 text-center mb-2">CSS UNIT Converter App</h1>
+                <form>
+                    <select name="" id="selectItem" class="form-control mb-2">
+        <option value="0">Select unit</option>
+        <option value="px">Px</option>
+        <option value="inch">Inch</option>
+        <option value="em">Em</option>
+        <option value="percentage">Percentage</option>
+        <option value="point">Pt</option>
+      </select>
+                    <div id="result">
+                        <div class="form-group">
+                            <input id="input" type="number" class="form-control form-control-lg" placeholder="Enter Unit">
+                        </div>
+                    </div>
+
+                </form>
+                <div id="output">
+                    <div id="pxResult">
+                        <div class="card bg-success mb-2 text-center">
+                            <div class="card-block">
+                                <h4>Pixel:</h4>
+                                <div id="pxOutput"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="inchResult">
+                        <div class="card bg-success mb-2 text-center">
+                            <div class="card-block">
+                                <h4>Inch:</h4>
+                                <div id="inchOutput"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="percentageResult">
+                        <div class="card bg-primary mb-2 text-center">
+                            <div class="card-block">
+                                <h4>Percentage:</h4>
+                                <div id="percentageOutput"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="emResult">
+                        <div class="card bg-danger mb-2 text-center">
+                            <div class="card-block">
+                                <h4>Em:</h4>
+                                <div id="emOutput"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="ptResult">
+                        <div class="card bg-warning mb-2 text-center">
+                            <div class="card-block">
+                                <h4>Pt:</h4>
+                                <div id="ptOutput"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/plugins/jquery.min.js"></script>
+    <script src="assets/plugins/popper.min.js"></script>
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script>
+        document.onreadystatechange = function() {
+            if (document.readyState === "complete") {
+                app.appCtrl();
+            }
+        }
+    </script>
+</body>
+
+</html>
