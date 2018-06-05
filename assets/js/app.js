@@ -91,7 +91,7 @@ var app = {
         _input.addEventListener("input", e => {
           _output.style.display = "block";
           var _unit = e.target.value;
-
+          _pxResult.style.display = "block";
           _inchResult.style.display = "none";
           _ptResult.style.display = "block";
           _emResult.style.display = "block";
